@@ -11,8 +11,6 @@
                     hreflang="en"
                     href="http://ugger0101.github.io/categories/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/tags/hugo/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/first_post/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -22,6 +20,8 @@
                     hreflang="en"
                     href="http://ugger0101.github.io/"
                     /></url><url>
+            <loc>http://ugger0101.github.io/tags/hugo/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://ugger0101.github.io/first_post/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/posts/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/tags/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"

@@ -1,13 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo - Tag - LoveIt</title>
+        <title>Hugo - Tag - Flat Land</title>
         <link>http://ugger0101.github.io/tags/hugo/</link>
-        <description>Hugo - Tag - LoveIt</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Jan 2022 18:40:38 &#43;0800</lastBuildDate><atom:link href="http://ugger0101.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+        <description>Hugo - Tag - Flat Land</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cxq5253@163.com (flat)</managingEditor>
+            <webMaster>cxq5253@163.com (flat)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Jan 2022 18:40:38 &#43;0800</lastBuildDate><atom:link href="http://ugger0101.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
     <title>Hugo博客系列(一)</title>
     <link>http://ugger0101.github.io/first_post/</link>
     <pubDate>Tue, 04 Jan 2022 18:40:38 &#43;0800</pubDate>
-    <author>xxxx</author>
+    <author>flat</author>
     <guid>http://ugger0101.github.io/first_post/</guid>
     <description><![CDATA[本系列教程第一章讲解了几种常见的博客框架选择，最终以 Hugo 框架为基础，教授了如何在 GitHub pages 上部署个人博客，还使用 GitHub actions 以及一个简单的 bat 脚本实现自动化发布。]]></description>
 </item>
