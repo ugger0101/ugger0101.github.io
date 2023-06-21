@@ -1,4 +1,4 @@
-# 关于 LoveIt
+# 关于
 
 
 {{< style "img { height: 1.25rem; }" >}}
