@@ -1,0 +1,1 @@
+[{"categories":["web"],"content":"本系列教程第一章讲解了几种常见的博客框架选择，最终以 Hugo 框架为基础，教授了如何在 GitHub pages 上部署个人博客，还使用 GitHub actions 以及一个简单的 bat 脚本实现自动化发布。","date":"2022-01-04","objectID":"/first_post/","tags":["Hugo"],"title":"Hugo博客系列(一)","uri":"/first_post/"}]
