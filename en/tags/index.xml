@@ -4,5 +4,61 @@
         <link>http://ugger0101.github.io/en/tags/</link>
         <description>Tags - Tag - Flat Land</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cxq5253@163.com (flat)</managingEditor>
-            <webMaster>cxq5253@163.com (flat)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://ugger0101.github.io/en/tags/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>cxq5253@163.com (flat)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</lastBuildDate><atom:link href="http://ugger0101.github.io/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>configuration</title>
+    <link>http://ugger0101.github.io/en/tags/configuration/</link>
+    <pubDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/configuration/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>installation</title>
+    <link>http://ugger0101.github.io/en/tags/installation/</link>
+    <pubDate>Fri, 06 Mar 2020 21:29:01 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/installation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>content</title>
+    <link>http://ugger0101.github.io/en/tags/content/</link>
+    <pubDate>Thu, 05 Mar 2020 15:58:26 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/content/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Markdown</title>
+    <link>http://ugger0101.github.io/en/tags/markdown/</link>
+    <pubDate>Thu, 05 Mar 2020 15:58:26 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/markdown/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>shortcodes</title>
+    <link>http://ugger0101.github.io/en/tags/shortcodes/</link>
+    <pubDate>Wed, 04 Mar 2020 16:29:41 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/shortcodes/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>HTML</title>
+    <link>http://ugger0101.github.io/en/tags/html/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/html/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>emoji</title>
+    <link>http://ugger0101.github.io/en/tags/emoji/</link>
+    <pubDate>Tue, 01 Oct 2019 17:55:28 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/en/tags/emoji/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
