@@ -2,30 +2,37 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://ugger0101.github.io/zh-cn/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/yi-wang-ju-ding-yi-ju/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/categories/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://ugger0101.github.io/categories/"
+                        href="http://ugger0101.github.io/en/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://ugger0101.github.io/zh-cn/categories/"
+                    href="http://ugger0101.github.io/categories/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/zh-cn/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://ugger0101.github.io/"
+                        href="http://ugger0101.github.io/en/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://ugger0101.github.io/zh-cn/"
+                    href="http://ugger0101.github.io/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/zh-cn/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/posts/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/categories/reading/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/tags/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://ugger0101.github.io/tags/"
+                        href="http://ugger0101.github.io/en/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://ugger0101.github.io/zh-cn/tags/"
-                    /></url></urlset>
+                    href="http://ugger0101.github.io/tags/"
+                    /></url><url>
+            <loc>http://ugger0101.github.io/tags/%E5%88%98%E9%9C%87%E4%BA%91/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/tags/hugo/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://ugger0101.github.io/first_post/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://ugger0101.github.io/categories/web/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
