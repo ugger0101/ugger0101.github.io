@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - LoveIt</title>
-        <link>https://ugger0101.github.io/tags/</link>
+        <link>https://www.flatland.top/tags/</link>
         <description>Tags - Tag - LoveIt</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Jan 2022 18:40:38 &#43;0800</lastBuildDate><atom:link href="https://ugger0101.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Jan 2022 18:40:38 &#43;0800</lastBuildDate><atom:link href="https://www.flatland.top/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Hugo</title>
-    <link>https://ugger0101.github.io/tags/hugo/</link>
+    <link>https://www.flatland.top/tags/hugo/</link>
     <pubDate>Tue, 04 Jan 2022 18:40:38 &#43;0800</pubDate>
     <author>xxxx</author>
-    <guid>https://ugger0101.github.io/tags/hugo/</guid>
+    <guid>https://www.flatland.top/tags/hugo/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
