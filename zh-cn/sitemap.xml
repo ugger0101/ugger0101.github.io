@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://ugger0101.github.io/theme-documentation-basics/</loc><lastmod>2020-03-06T21:40:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-basics/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-basics/"
@@ -11,7 +11,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-basics/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-content/</loc><lastmod>2020-03-05T16:30:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-content/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-content/"
@@ -20,7 +20,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-content/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-built-in-shortcodes/</loc><lastmod>2020-03-04T16:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-built-in-shortcodes/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-built-in-shortcodes/"
@@ -29,7 +29,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-built-in-shortcodes/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-extended-shortcodes/</loc><lastmod>2020-06-12T10:10:13&#43;03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-extended-shortcodes/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-extended-shortcodes/"
@@ -38,7 +38,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-extended-shortcodes/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/basic-markdown-syntax/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/basic-markdown-syntax/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/basic-markdown-syntax/"
@@ -47,7 +47,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/basic-markdown-syntax/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-mermaid-shortcode/</loc><lastmod>2020-03-03T15:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-mermaid-shortcode/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-mermaid-shortcode/"
@@ -56,7 +56,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-mermaid-shortcode/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/emoji-support/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/emoji-support/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/emoji-support/"
@@ -65,7 +65,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/emoji-support/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-echarts-shortcode/</loc><lastmod>2020-03-03T14:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-echarts-shortcode/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-echarts-shortcode/"
@@ -74,7 +74,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-echarts-shortcode/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-mapbox-shortcode/</loc><lastmod>2020-03-03T13:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-mapbox-shortcode/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-mapbox-shortcode/"
@@ -83,7 +83,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-mapbox-shortcode/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-music-shortcode/</loc><lastmod>2020-03-03T12:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-music-shortcode/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-music-shortcode/"
@@ -92,7 +92,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-music-shortcode/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-bilibili-shortcode/</loc><lastmod>2020-03-03T12:29:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-bilibili-shortcode/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-bilibili-shortcode/"
@@ -101,7 +101,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-bilibili-shortcode/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/theme-documentation-typeit-shortcode/</loc><lastmod>2020-03-03T10:29:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/theme-documentation-typeit-shortcode/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/theme-documentation-typeit-shortcode/"
@@ -110,8 +110,8 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/theme-documentation-typeit-shortcode/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/yi-wang-ju-ding-yi-ju/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://ugger0101.github.io/categories/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://ugger0101.github.io/yi-wang-ju-ding-yi-ju/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/categories/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/categories/"
@@ -120,7 +120,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/categories/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://ugger0101.github.io/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/"
@@ -129,7 +129,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/posts/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://ugger0101.github.io/posts/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/posts/"
@@ -138,8 +138,8 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/posts/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/categories/reading/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://ugger0101.github.io/tags/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://ugger0101.github.io/categories/reading/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/tags/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/tags/"
@@ -148,38 +148,11 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/tags/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/tags/%E5%88%98%E9%9C%87%E4%BA%91/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://ugger0101.github.io/tags/hugo/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/first_post/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/categories/web/</loc><lastmod>2022-01-04T18:40:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/tags/installation/</loc><lastmod>2020-03-06T21:40:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/tags/installation/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/tags/installation/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/tags/configuration/</loc><lastmod>2020-03-06T21:40:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/tags/configuration/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/tags/configuration/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/categories/documentation/</loc><lastmod>2020-06-12T10:10:13&#43;03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/categories/documentation/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/categories/documentation/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/tags/markdown/</loc><lastmod>2020-03-05T16:30:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/tags/%E5%88%98%E9%9C%87%E4%BA%91/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/tags/hugo/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/first_post/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/categories/web/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://ugger0101.github.io/tags/markdown/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/tags/markdown/"
@@ -188,16 +161,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/tags/markdown/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/tags/content/</loc><lastmod>2020-03-05T16:30:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/tags/content/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/tags/content/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/tags/shortcodes/</loc><lastmod>2020-06-12T10:10:13&#43;03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/tags/shortcodes/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/tags/shortcodes/"
@@ -206,7 +170,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/tags/shortcodes/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/tags/html/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/tags/html/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/tags/html/"
@@ -215,7 +179,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/tags/html/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/categories/markdown/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/categories/markdown/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/categories/markdown/"
@@ -224,7 +188,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/categories/markdown/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/tags/emoji/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/tags/emoji/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/tags/emoji/"
@@ -233,7 +197,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/tags/emoji/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://ugger0101.github.io/about/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://ugger0101.github.io/en/about/"
@@ -241,4 +205,40 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/about/"
+                    /></url><url>
+            <loc>http://ugger0101.github.io/tags/installation/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://ugger0101.github.io/en/tags/installation/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://ugger0101.github.io/tags/installation/"
+                    /></url><url>
+            <loc>http://ugger0101.github.io/tags/content/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://ugger0101.github.io/en/tags/content/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://ugger0101.github.io/tags/content/"
+                    /></url><url>
+            <loc>http://ugger0101.github.io/tags/configuration/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://ugger0101.github.io/en/tags/configuration/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://ugger0101.github.io/tags/configuration/"
+                    /></url><url>
+            <loc>http://ugger0101.github.io/categories/documentation/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://ugger0101.github.io/en/categories/documentation/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://ugger0101.github.io/categories/documentation/"
                     /></url></urlset>
