@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>JAVA - 标签 - Flat Land</title>
+        <link>http://ugger0101.github.io/tags/java/</link>
+        <description>JAVA - 标签 - Flat Land</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>cxq5253@163.com (flat)</managingEditor>
+            <webMaster>cxq5253@163.com (flat)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</lastBuildDate><atom:link href="http://ugger0101.github.io/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>JAVA 注解与反射</title>
+    <link>http://ugger0101.github.io/documentation-reflect-and-annotation/</link>
+    <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/documentation-reflect-and-annotation/</guid>
+    <description><![CDATA[注解与反射]]></description>
+</item>
+</channel>
+</rss>

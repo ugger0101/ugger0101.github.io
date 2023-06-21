@@ -132,7 +132,7 @@ For more information please have a look at GitHub issue [#7879](https://github.c
 
 呈现的输出效果如下:
 
-{{< tweet 917359331535966209 >}}
+{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
 ## 8 vimeo
 

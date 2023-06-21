@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> 残差网络：Deep Residual Learning for Image Recognition论文阅读 - Flat Land</title><meta name="Description" content="Deep Residual Learning for Image Recognition论文阅读"><meta property="og:title" content=" 残差网络：Deep Residual Learning for Image Recognition论文阅读" />
+<meta property="og:description" content="Deep Residual Learning for Image Recognition论文阅读" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" /><meta property="og:image" content="http://ugger0101.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-10-01T17:55:28+08:00" />
+<meta property="article:modified_time" content="2019-10-01T17:55:28+08:00" /><meta property="og:site_name" content="FlatLand" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://ugger0101.github.io/logo.png"/>
+
+<meta name="twitter:title" content=" 残差网络：Deep Residual Learning for Image Recognition论文阅读"/>
+<meta name="twitter:description" content="Deep Residual Learning for Image Recognition论文阅读"/>
+<meta name="application-name" content="FlatLand">
+<meta name="apple-mobile-web-app-title" content="FlatLand"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" /><link rel="prev" href="http://ugger0101.github.io/yi-wang-ju-ding-yi-ju/" /><link rel="next" href="http://ugger0101.github.io/c-/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": " 残差网络：Deep Residual Learning for Image Recognition论文阅读",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/ugger0101.github.io\/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/ugger0101.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "AI","wordcount":  3396 ,
+        "url": "http:\/\/ugger0101.github.io\/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB\/","datePublished": "2019-10-01T17:55:28+08:00","dateModified": "2019-10-01T17:55:28+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "http:\/\/ugger0101.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "flat"
+            },"description": "Deep Residual Learning for Image Recognition论文阅读"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Flat Land"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/categories/leetcode/"> Leetcode </a><a class="menu-item" href="/categories/template/"> 模板 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/categories/write/"> 闲聊 </a><a class="menu-item" href="https://github.com/ugger0101" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Flat Land"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/categories/leetcode/" title="">Leetcode</a><a class="menu-item" href="/categories/template/" title="">模板</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/categories/write/" title="">闲聊</a><a class="menu-item" href="https://github.com/ugger0101" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX"> 残差网络：Deep Residual Learning for Image Recognition论文阅读</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>flat</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ai/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>AI</a>&nbsp;<a href="/categories/documentation/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>文档</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2019-10-01">2019-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3396 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="leancloud_visitors" data-flag-title=" 残差网络：Deep Residual Learning for Image Recognition论文阅读">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#文献简介">文献简介：</a></li>
+    <li><a href="#deep-residual-learning-for-image-recognition-文献内容总结">Deep Residual Learning for Image Recognition 文献内容总结：</a>
+      <ul>
+        <li><a href="#介绍">介绍</a></li>
+        <li><a href="#残差网络">残差网络</a></li>
+        <li><a href="#bottleneck-layer">Bottleneck layer</a></li>
+        <li><a href="#开放性的问题">开放性的问题</a></li>
+        <li><a href="#pytoch源码辅助理解">pytoch源码辅助理解</a></li>
+      </ul>
+    </li>
+    <li><a href="#文献研究内容思考">文献研究内容思考：</a>
+      <ul>
+        <li><a href="#为什么模型不会出现过拟合">为什么模型不会出现过拟合？</a></li>
+        <li><a href="#正向与反向传播">正向与反向传播</a></li>
+        <li><a href="#总结">总结</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#参考文献">参考文献：</a></li>
+                <li><a href="#参考资料">参考资料：</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="残差网络deep-residual-learning-for-image-recognition论文阅读">残差网络：Deep Residual Learning for Image Recognition论文阅读</h1>
+<p><a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf" target="_blank" rel="noopener noreffer "><strong>Deep Residual Learning for Image Recognition</strong></a></p>
+<h2 id="文献简介">文献简介：</h2>
+<p>这篇论文就是resnet网络的开篇之作，为了解决更深的神经网络更难训练，作者提出了的残差结构，赢得了ILSVRC 2015分类任务的第一名，并且该网络比VGG网络深了八倍，不仅如此，还在物体监测，图像分割上取得了很好的结果。</p>
+<h2 id="deep-residual-learning-for-image-recognition-文献内容总结">Deep Residual Learning for Image Recognition 文献内容总结：</h2>
+<h3 id="介绍">介绍</h3>
+<p>​	深度卷积网络给图像分类任务带来了一系列的突破，网络越深，往往卷积神经网络（CNN）能够提取更多的低、中、高层的特征，而端到端的多层分类器更是可以通过堆叠深度来增加特征的“层次”。那么训练一个好的模型是否和我们假设的一样，堆很多的层数就够了？答案当然没有那么简单，一味地增加网络深度，会使得梯度消失或爆炸。但是解决这个问题目前已经存在一种较好的方法解决，那就是在网络权重初始化，选取合适的初始值，并且在网络的中间层加入一些正则化措施</p>
+<p>​	即使解决了梯度爆炸和梯度消失的问题，网络退化问题又随之出现。总所周知，CNN层数越多，越容易出现过拟合，但是作者发现过拟合的并不是导致网络退化的主要原因，因为训练误差无法继续下降了（过拟合现象通常是指训练误差和测试误差相差过大，训练误差表现的更好）。</p>
+<p>​	作者先尝试了在浅层网络后加入一个与之对应的恒等映射（identity mapping）层来实现深层的网络，即直接复制前一层的参数，来将网络加深，也就是输入输出是相等的，将权重分成多个部分。理论来说这样只是在浅层网络上扩展为深层，结果应该好于或等于浅层网络，但是实验发现这样这个想法并不可行。原因也很简单，梯度下降算法SGD（文中使用的算法）在多层网络下找不到全局最优解了，越来越深的网络必然使得全局最优解越来越难找到。（SGD的精髓就是能够一直能跑的动，如果哪一天跑不动了，梯度没了就完了，就会卡在一个地方出不去了，所以它的精髓就在于需要梯度够大，要一直能够跑，因为有噪音的存在，所以慢慢的他总是会收敛的，所以只要保证梯度一直够大，其实到最后的结果就会比较好）。</p>
+<h3 id="残差网络">残差网络</h3>
+<p>​	作者就此提出了深度残差学习框架，如下图所示，假设$x$ 是来自浅层网络，在原有的结构中加入了右边的一条链接，实际上这被称为快捷链接（shortcut connection），直接跳过包含权重的两层网络，将$x$输出到下一次激活函数内。</p>
+<p>​	在普通的卷积神经网络（CNN）中，我们要输入$x$，然后输出$h(x)$，即$x -&gt; f(x) -&gt; h(x) $，$f(x)$的参数就是我们需要拟合的对象（也就是神经网络拟合的某一层的权重）。但是残差网络中，变成了$x - &gt; f(x) + x -&gt; h(x)$，那么网络拟合的函数不再是CNN中的$h(x)$而是$h(x) -x$ ，因为$f(x) = h(x) -x $，这也就是为什么被称为残差块（residual block）。![image-20230428155102742](残差网络_Deep Residual Learning for Image Recognition论文阅读.assets/image-20230428155102742.png)</p>
+<p>​	继续通过简单的证明来说明为什么这样可以消除网络的退化，如下推导过程所示，其中$A^l$是经过残差得来的上一层结果，$A^{l+2}$是输出结果，我们可以看到即使$f(x)$趋近于0，传入下一层的参数由于恒等映射的存在，依然可以保留非线性层的权重。
+$$
+A^{l+2} = relu(f(z^{l+2} ) + A^{l})\
+st: z^{l+2} = w^{l+2} * A^{l+2} + b^{l+2}\
+=&gt; A^{l+2} = relu(f(w^{l+2} * A^{l+2} + b^{l+2})+ A^{l})\
+如果 f(z^{l+2} )  -&gt; 0,  A^{l+2} -&gt; relu(A^{l})\
+那么经过relu层，只要A^{l} &gt; 0 ，那么就有A^{l+2} -&gt; A^{l}
+$$
+​	所以就算是在极端情况下，越来越深的网络可能存在一些权重近似为0的堆叠层，由于残差块的作用，我们依然可以保留权重继续优化我们的模型。</p>
+<p>​	我们还需要考虑一个问题，那就是捷径链接和输出的维度不同该怎么办，那么我们就需要通过添加额外的$W_s$投影矩阵使得式子变成$y = F(x, {Wi}) + W_s<em>x$，令$F(x, {Wi})$维度和$W_s</em>x$相同，其中$F(x, {Wi})$也代表了可以在跨越多个层进行链接，如图所示，当中间的层数为一时，就变成上文提出的式子。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428195418504.png"
+        data-srcset="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428195418504.png, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428195418504.png 1.5x, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428195418504.png 2x"
+        data-sizes="auto"
+        alt="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428195418504.png"
+        title="image-20230428195418504" width="726" height="306" /></p>
+<h3 id="bottleneck-layer">Bottleneck layer</h3>
+<p>​	作者在实验中还设计了一个瓶颈层，包含了三层，分别是 1×1、3×3 和 1×1 卷积，其中 1×1 层负责减少然后增加（恢复）维度，使 3x3 层成为输入/输出维度较小的瓶颈，并且证明这两种设计具有相似的时间复杂度。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428200633353.png"
+        data-srcset="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428200633353.png, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428200633353.png 1.5x, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428200633353.png 2x"
+        data-sizes="auto"
+        alt="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428200633353.png"
+        title="image-20230428200633353" width="1127" height="453" /></p>
+<h3 id="开放性的问题">开放性的问题</h3>
+<p>​	作者认为，深度模型的优化不太可能是由梯度消失引起的。他们训练了没有残差结构的plain网络，使用BN来保证了前向传播的信号具有非零的方差，并且验证了返现传播的梯度在BN中也起了作用，所以前向和反向传播都没有消失，实验结果表明34层的网络依然能取得不错的成绩，说明网络在一定程度上是正常运行的，所以作者猜测难以继续优化的原因是因为加深的网络使得减少训练误差的难度呈现指数级的上升。</p>
+<h3 id="pytoch源码辅助理解">pytoch源码辅助理解</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BasicBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expansion</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inplanes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">planes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">downsample</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">groups</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">base_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dilation</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">norm_layer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">norm_layer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">norm_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">groups</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">base_width</span> <span class="o">!=</span> <span class="mi">64</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;BasicBlock only supports groups=1 and base_width=64&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">dilation</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&#34;Dilation &gt; 1 not supported in BasicBlock&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Both self.conv1 and self.downsample layers downsample the input when stride != 1</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">conv3x3</span><span class="p">(</span><span class="n">inplanes</span><span class="p">,</span> <span class="n">planes</span><span class="p">,</span> <span class="n">stride</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span> <span class="o">=</span> <span class="n">norm_layer</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">conv3x3</span><span class="p">(</span><span class="n">planes</span><span class="p">,</span> <span class="n">planes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span> <span class="o">=</span> <span class="n">norm_layer</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span> <span class="o">=</span> <span class="n">downsample</span> <span class="c1"># 下采样层</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">stride</span> <span class="o">=</span> <span class="n">stride</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">identity</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 卷积层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># BN层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># relu函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># 卷积层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># BN层</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">identity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 下采样，也就是Identity Mapping</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">+=</span> <span class="n">identity</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># relu函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bottleneck</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expansion</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inplanes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">planes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">downsample</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">groups</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">base_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dilation</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">norm_layer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">norm_layer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">norm_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span>
+</span></span><span class="line"><span class="cl">        <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">planes</span> <span class="o">*</span> <span class="p">(</span><span class="n">base_width</span> <span class="o">/</span> <span class="mf">64.0</span><span class="p">))</span> <span class="o">*</span> <span class="n">groups</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Both self.conv2 and self.downsample layers downsample the input when stride != 1</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">conv1x1</span><span class="p">(</span><span class="n">inplanes</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span> <span class="o">=</span> <span class="n">norm_layer</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">conv3x3</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">stride</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">dilation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span> <span class="o">=</span> <span class="n">norm_layer</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span> <span class="o">=</span> <span class="n">conv1x1</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">planes</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">expansion</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">bn3</span> <span class="o">=</span> <span class="n">norm_layer</span><span class="p">(</span><span class="n">planes</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">expansion</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span> <span class="o">=</span> <span class="n">downsample</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">stride</span> <span class="o">=</span> <span class="n">stride</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">identity</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 1x1 卷积层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># BN层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># relu函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># 3x3 卷积层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># BN层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># relu函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># 1x1 卷积层</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bn3</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># BN层</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">identity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">+=</span> <span class="n">identity</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="c1"># relu函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>​	网络的构造大家可以自行去查看源码，这里只给出残差单元的basic和Bottleneck的框架，pytorch源码阅读应该是相对较为简单，里面也提供了许多版本的resnet。</p>
+<h2 id="文献研究内容思考">文献研究内容思考：</h2>
+<p>​	后续这篇论文作者通过分析残差块(residual block)背后的传播公式，通过一系列的消融实验(ablation experiments)来确定了恒等映射的重要性，并提出来新的残差单元(residual unit)，使得训练更加简单，并且提高模型的泛化能力。代码位于：https://github.com/KaimingHe/resnet-1k-layers。并且两篇论文均是来自微软研究院，都出自Kaiming He, Xiangyu Zhang, Shaoqing Ren, 和 Jian Sun。作者也设计了多种消融实验，并分析其结果，如下图所示，其中也通过推导来证明为什么一定要满足恒等映射。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428202328046.png"
+        data-srcset="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428202328046.png, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428202328046.png 1.5x, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428202328046.png 2x"
+        data-sizes="auto"
+        alt="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428202328046.png"
+        title="image-20230428202328046" width="1283" height="650" /></p>
+<h3 id="为什么模型不会出现过拟合">为什么模型不会出现过拟合？</h3>
+<blockquote>
+<p>​	CIFAR数据集比较小，但是在1000层的网络架构下仍然没有过拟合。</p>
+</blockquote>
+<p>​	尽管深度模型具有许多参数和复杂的结构，但由于其内在设计的缘故，模型的复杂度实际上并不高。事实上，引入残差连接可以降低模型的复杂度，从而减轻过拟合的问题。降低模型复杂度并不意味着无法表示其他信息，而是可以找到一个更简单的模型来拟合数据。例如，即使没有残差连接，理论上也可能学习到某种恒等变换，但实际上这是不可行的，因为没有指导整个网络的信息流向，从而导致难以实现。因此，手动将这种变换引入模型中，使其更易于训练，相当于降低了模型的复杂度。</p>
+<h3 id="正向与反向传播">正向与反向传播</h3>
+<p>图中$x,y,z,w$表示初始值，每一条线的绿色数字代表着正向传播的参数，红色代表的是反向传播的参数，每一个圆圈代表一次运算，其中的符号或数字代表着计算方式。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204052181.png"
+        data-srcset="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204052181.png, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204052181.png 1.5x, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204052181.png 2x"
+        data-sizes="auto"
+        alt="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204052181.png"
+        title="image-20230428204052181" width="954" height="646" /></p>
+<p>我再给出添加了残差块的例子，希望这个图可以帮助理解残差网络的反向传播</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204526919.png"
+        data-srcset="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204526919.png, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204526919.png 1.5x, /%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204526919.png 2x"
+        data-sizes="auto"
+        alt="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/image-20230428204526919.png"
+        title="image-20230428204526919" width="993" height="535" /></p>
+<h3 id="总结">总结</h3>
+<p>​	残差网络的提出到目前为止，已经有超过90%的网络在使用基于跳跃连接的网络，根据该结构的灵感，提出了各式各样的网络结果，例如 LSTNet中上，类似的设计了循环跳跃层来跳过部分信息流，在RNN处理时序相关的问题时，也提出了相似的结构来跳过部分时间帧。</p>
+<h5 id="参考文献">参考文献：</h5>
+<p><a href="https://arxiv.org/pdf/1603.05027.pdf" target="_blank" rel="noopener noreffer ">Identity Mappings in Deep Residual Networks</a></p>
+<h5 id="参考资料">参考资料：</h5>
+<p><a href="https://www.bilibili.com/video/BV1P3411y7nn/?vd_source=7a389f0847a33d335e213d11072e96af" target="_blank" rel="noopener noreffer ">ResNet论文逐段精读【论文精读】</a></p>
+<p><a href="https://towardsdatascience.com/residual-blocks-in-deep-learning-11d95ca12b00" target="_blank" rel="noopener noreffer ">Residual Blocks in Deep Learning</a></p>
+<p><a href="https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py" target="_blank" rel="noopener noreffer ">pytorch的resnet源代码</a></p>
+<p><a href="https://stats.stackexchange.com/questions/268820/gradient-backpropagation-through-resnet-skip-connections" target="_blank" rel="noopener noreffer ">Gradient backpropagation through ResNet skip connections</a></p>
+<p><a href="https://cs231n.github.io/optimization-2/" target="_blank" rel="noopener noreffer ">https://cs231n.github.io/optimization-2/</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-10-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" data-title=" 残差网络：Deep Residual Learning for Image Recognition论文阅读" data-hashtags="AI"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" data-hashtag="AI"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" data-title=" 残差网络：Deep Residual Learning for Image Recognition论文阅读"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" data-title=" 残差网络：Deep Residual Learning for Image Recognition论文阅读"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" data-title=" 残差网络：Deep Residual Learning for Image Recognition论文阅读" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ai/">AI</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/yi-wang-ju-ding-yi-ju/" class="prev" rel="prev" title="《一句话顶一万句话》全书评"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>《一句话顶一万句话》全书评</a>
+            <a href="/c-/" class="next" rel="next" title=" C&#43;&#43; 之引用（reference)"> C++ 之引用（reference)<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.114.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">flat</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"data":{"id-1":"FlatLand","id-2":"FlatLand"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

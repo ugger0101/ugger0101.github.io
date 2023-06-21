@@ -131,7 +131,7 @@ Example `tweet` input:
 
 The rendered output looks like this:
 
-{{< tweet 917359331535966209 >}}
+{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
 ## 8 vimeo
 
