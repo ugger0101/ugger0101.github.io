@@ -3,15 +3,6 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
             <loc>http://ugger0101.github.io/documentation-reflect-and-annotation/</loc><lastmod>2020-03-06T21:40:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/emoji-support/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/emoji-support/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/emoji-support/"
-                    /></url><url>
             <loc>http://ugger0101.github.io/improving-language-understanding-by-generative-pre-training/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/c-/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/%E6%AE%8B%E5%B7%AE%E7%BD%91%E7%BB%9C_deep-residual-learning-for-image-recognition%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -34,15 +25,7 @@
                     hreflang="zh-cn"
                     href="http://ugger0101.github.io/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/posts/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/posts/"
-                    /></url><url>
+            <loc>http://ugger0101.github.io/posts/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://ugger0101.github.io/categories/reading/</loc><lastmod>2023-06-21T19:22:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://ugger0101.github.io/tags/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -69,25 +52,7 @@
             <loc>http://ugger0101.github.io/categories/ai/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/tags/c&#43;&#43;/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://ugger0101.github.io/categories/c&#43;&#43;/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/tags/emoji/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/tags/emoji/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/tags/emoji/"
-                    /></url><url>
             <loc>http://ugger0101.github.io/tags/gpt/</loc><lastmod>2019-10-01T17:55:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://ugger0101.github.io/categories/markdown/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://ugger0101.github.io/en/categories/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://ugger0101.github.io/categories/markdown/"
-                    /></url><url>
             <loc>http://ugger0101.github.io/about/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"

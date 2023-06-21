@@ -2,14 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://ugger0101.github.io/en/emoji-support/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://ugger0101.github.io/en/about/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="http://ugger0101.github.io/emoji-support/"
+                        href="http://ugger0101.github.io/about/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://ugger0101.github.io/en/emoji-support/"
+                    href="http://ugger0101.github.io/en/about/"
                     /></url><url>
             <loc>http://ugger0101.github.io/en/categories/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -20,14 +20,14 @@
                     hreflang="en"
                     href="http://ugger0101.github.io/en/categories/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/en/tags/emoji/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://ugger0101.github.io/en/categories/documentation/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="http://ugger0101.github.io/tags/emoji/"
+                        href="http://ugger0101.github.io/categories/documentation/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://ugger0101.github.io/en/tags/emoji/"
+                    href="http://ugger0101.github.io/en/categories/documentation/"
                     /></url><url>
             <loc>http://ugger0101.github.io/en/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
@@ -38,51 +38,6 @@
                     hreflang="en"
                     href="http://ugger0101.github.io/en/"
                     /></url><url>
-            <loc>http://ugger0101.github.io/en/categories/markdown/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://ugger0101.github.io/categories/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://ugger0101.github.io/en/categories/markdown/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/en/posts/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://ugger0101.github.io/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://ugger0101.github.io/en/posts/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/en/tags/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://ugger0101.github.io/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://ugger0101.github.io/en/tags/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/en/about/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://ugger0101.github.io/about/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://ugger0101.github.io/en/about/"
-                    /></url><url>
-            <loc>http://ugger0101.github.io/en/categories/documentation/</loc><lastmod>2023-06-21T19:51:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://ugger0101.github.io/categories/documentation/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://ugger0101.github.io/en/categories/documentation/"
-                    /></url><url>
             <loc>http://ugger0101.github.io/en/categories/leetcode/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -91,6 +46,15 @@
                     rel="alternate"
                     hreflang="en"
                     href="http://ugger0101.github.io/en/categories/leetcode/"
+                    /></url><url>
+            <loc>http://ugger0101.github.io/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://ugger0101.github.io/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://ugger0101.github.io/en/tags/"
                     /></url><url>
             <loc>http://ugger0101.github.io/en/categories/template/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
