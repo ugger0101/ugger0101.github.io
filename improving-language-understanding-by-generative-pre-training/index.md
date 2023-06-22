@@ -34,7 +34,6 @@ $$
 ​	在进行大量无标注的文本语料库训练后，模型还需要在某些特定的目标任务下进行微调。给定文本$ x^1,\ldots,x^m$和相应的标注信息$y$，将它们输入到预训练模型中进行微调。在微调过程中，$h_l^m $表示最后一层 Transformer 块的输出，$W_y$表示最后一层输出层的参数。
 $$
 P\left(y\mid x^1,\ldots,x^m\right)=softmax\left(h_l^mW_y\right) \\
-
 L_2\left(\mathcal{C}\right)=\sum_{\left(x,y\right)}{\log{P}\left(y\mid x^1,\ldots,x^m\right)}
 $$
 ​	但是作者并不仅仅只将$L_2$作为微调阶段的目标函数，而是采用$L_3\left(\mathcal{C}\right)=L_2\left(\mathcal{C}\right)+\lambda\ast L_1\left(\mathcal{C}\right)$方式，将预训练模型的目标函数加权求和。
@@ -68,7 +67,6 @@ GPT预训练模型仅仅只采用transformer的解码器(decoder)，是源于解
 GPT的位置嵌入并没有使用原transformer的正弦函数(sinusoidal)的方式求得。其中transformer提出的方式见如下公式。经过查阅，发现Bert[4]也不是采用transformer的正弦函数，可能自学习的位置嵌入更加贴合数据集，并且目前的单一输入文本长度也不会过长，但在将来越来越大的数据集下，这种可以扩展到无限长度的方式本身具有的泛化性可能会更加有优势。
 $$
 PE_{\left(pos,2i\right)}=\sin{\left(pos/{10000}^{2i/d}\right)}\\
-
 PE_{\left(pos,2i+1\right)}=\cos{\left(pos/{10000}^{2i/d}\right)}
 $$
 #### 结论
