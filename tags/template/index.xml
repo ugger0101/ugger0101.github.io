@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>模板 - 分类 - Flat Land</title>
-        <link>http://ugger0101.github.io/categories/template/</link>
-        <description>模板 - 分类 - Flat Land</description>
+        <title>template - 标签 - Flat Land</title>
+        <link>http://ugger0101.github.io/tags/template/</link>
+        <description>template - 标签 - Flat Land</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>cxq5253@163.com (flat land)</managingEditor>
-            <webMaster>cxq5253@163.com (flat land)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://ugger0101.github.io/categories/template/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>cxq5253@163.com (flat land)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</lastBuildDate><atom:link href="http://ugger0101.github.io/tags/template/" rel="self" type="application/rss+xml" /><item>
     <title>博客模板</title>
     <link>http://ugger0101.github.io/template/</link>
     <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>

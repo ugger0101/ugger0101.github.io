@@ -15,6 +15,14 @@
     <description><![CDATA[注解与反射]]></description>
 </item>
 <item>
+    <title>博客模板</title>
+    <link>http://ugger0101.github.io/template/</link>
+    <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
+    <author>flat</author>
+    <guid>http://ugger0101.github.io/template/</guid>
+    <description><![CDATA[本文仅仅只是用作个人的博客的新建文章 1 hugo new posts/index.zh-cn.md]]></description>
+</item>
+<item>
     <title>  GPT的前身：Improving Language Understanding by Generative Pre-Training 论文阅读</title>
     <link>http://ugger0101.github.io/improving-language-understanding-by-generative-pre-training/</link>
     <pubDate>Tue, 01 Oct 2019 17:55:28 &#43;0800</pubDate>
