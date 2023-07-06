@@ -1,4 +1,4 @@
-# 质数
+# 求质数模板
 
 
 <!--more-->
@@ -61,7 +61,7 @@ func prime(n int) (res []int) {
 
 > **OI Wiki**  
 >
-> 考虑这样一件事情：对于任意一个大于$i$的正整数 ![n](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，那么它的$x$倍就是合数（![x > 1](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)$x>1$)。利用这个结论，我们可以避免很多次不必要的检测。如果我们从小到大考虑每个数，然后同时把当前这个数的所有（比自己大的)倍数记为合数，那么运行结束的时候没有被标记的数就是素数了。
+> 考虑这样一件事情：对于任意一个大于$i$的正整数 $n$，那么它的$x$倍就是合数（$x>1$)。利用这个结论，我们可以避免很多次不必要的检测。如果我们从小到大考虑每个数，然后同时把当前这个数的所有（比自己大的)倍数记为合数，那么运行结束的时候没有被标记的数就是素数了。
 
 利用图来表示就是
 
