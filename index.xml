@@ -20,7 +20,7 @@
     <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
     <author>flat</author>
     <guid>http://ugger0101.github.io/template/</guid>
-    <description><![CDATA[新建文章 1 hugo new posts/文件夹/index.zh-cn.md 指定预览的端口 hugo -D server &ndash;port=1313 生成页面 hugo -D server 最后进行git上传]]></description>
+    <description><![CDATA[新建文章 1 hugo new posts/文件夹/index.zh-cn.md 指定预览的端口 1 hugo -D server --port=1313 生成页面 1 hugo -D server 最后进行git上传]]></description>
 </item>
 <item>
     <title>求质数模板</title>
